@@ -1,0 +1,202 @@
+/**
+ * 1. Reset styles
+ */
+
+@import 'reset';
+
+/**
+ * 2. Utilities
+ */
+
+ @import 'utilities';
+
+/**
+ * 3. Base Styles
+ */
+
+body {
+    font-family: $primaryFont;
+    font-size: $textSizeSmall;
+    background-color: $grey;
+}
+
+main {
+    height: auto;
+}
+
+// Helpers
+.text-center {
+    text-align: center;
+}
+
+// Typography
+h1 {
+    font-size: $textSizeLarge;
+    font-weight: $boldFontWeight;
+    color: $white;
+    margin: $baseline 0 0 $doubleBaseline;
+
+    @media screen and (min-width: 992px) {
+        font-size: $textSizeXLarge;
+        margin: $tripleBaseline 0 0 $tripleBaseline;
+    }
+
+    @media screen and (min-width: 1200px) {
+        margin: $quadrupleBaseline 0 0 $quadrupleBaseline;
+    }
+}
+
+h2 {
+    font-size: $textSizeMedium;
+    font-weight: $boldFontWeight;
+    color: $blue;
+    padding: $baseline 0 $doubleBaseline 0;
+}
+
+h3 {
+    font-size: $textSizeSmall;
+    font-weight: $boldFontWeight;
+    color: $blue;
+    padding-top: $baseline;
+}
+
+/**
+ * 4. Header
+ */
+
+header {
+    height: $quadrupleBaseline;
+    background-color: $blue;
+    padding: 0 $doubleBaseline;
+}
+
+.logo {
+    position: relative;
+    top: $baseline + $quarterBaseline;
+}
+
+nav {
+    float: right;
+    display: none;
+    
+	ul li {
+		display: inline-block;
+        padding: 0 $halfBaseline;
+        
+		a {
+            color: $white;
+            font-family: $secondaryFont;
+            font-size: $textSizeXXSmall;
+            text-decoration: none;
+            text-transform: uppercase; 
+            line-height: $quadrupleBaseline;  
+            letter-spacing: 0.5px;       
+		}
+    }
+    
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
+}
+
+.toggle-menu {
+    display: block;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+/**
+ * 4. Hero
+ */
+
+#hero {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background-color: $blue;
+    
+    .svg-wrapper {
+        $size: 150px;
+        width: 100%;
+        height: $size;
+        position: absolute;
+        bottom: -($size - 1px);
+        left: 0;
+    }
+
+    p {
+        color: $white;
+        font-weight: $thinFontWeight;
+        padding-top: $baseline;
+        line-height: 2;
+        margin: 0 $doubleBaseline 0 $doubleBaseline;
+
+        @media screen and (min-width: 992px) {
+            margin: 0 $doubleBaseline 0 $tripleBaseline;
+        }
+
+        @media screen and (min-width: 1200px) {
+            margin: 0 $doubleBaseline 0 $quadrupleBaseline;
+        }
+    }
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .column-6 {
+        flex: 0 0 100%; 
+
+        @media screen and (min-width: 768px) {
+            flex: 0 0 50%; 
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .column-4 {
+        flex: 0 0 100%; 
+
+        @media screen and (min-width: 768px) {
+            flex: 0 0 33.3%; 
+        }
+    }
+}
+
+/**
+ * 5. Info-box
+ */
+
+#info-box {
+    background-color: $white;
+    position: relative;
+    z-index: 1;
+    padding: $baseline;
+    margin: -$tripleBaseline $doubleBaseline $doubleBaseline $doubleBaseline;
+    -webkit-box-shadow: -2px 10px 18px -6px rgba(0,0,0,0.2);
+    -moz-box-shadow: -2px 10px 18px -6px rgba(0,0,0,0.2);
+    box-shadow: -2px 10px 18px -6px rgba(0,0,0,0.2);
+
+    p {
+        color: $darkGrey;
+        font-weight: $thinFontWeight;
+        font-size: $textSizeXSmall;
+        padding: $baseline $doubleBaseline;
+        line-height: 1.4;
+    }
+
+    @media screen and (min-width: 992px) {
+        margin: -$quadrupleBaseline $tripleBaseline $tripleBaseline $tripleBaseline;
+    }
+
+    @media screen and (min-width: 1200px) {
+        margin: -$quadrupleBaseline $quadrupleBaseline $tripleBaseline $quadrupleBaseline;
+    }
+}
